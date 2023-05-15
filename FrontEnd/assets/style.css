@@ -160,14 +160,18 @@ li:hover {
 	margin-right: 30px;
 }
 
-#category{
+#categories{
 	display: flex;
 	justify-content: center;
 	gap: 10px;
 	margin-bottom: 60px;
 }
 
-#category button{
+#categories.inactive {
+	display: none;
+}
+
+#categories button{
 	font-family: 'Syne';
 	font-size: 16px;
 	font-weight: 700;
@@ -182,7 +186,7 @@ li:hover {
 	cursor: pointer;
 }
 
-.button_category{
+.button_categories{
 	background: #FFFFFF;
 	color: #1D6154;
 	border: 1px #1D6154 solid;
@@ -389,7 +393,9 @@ footer nav ul {
 }
 
 .modal-container__add{
-	padding: 0 100px;
+	width: 418px;
+	height: 730px;
+	padding: 0 106px;
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -530,17 +536,38 @@ footer nav ul {
 	margin-bottom: 60px;
 }
 
-#modal-gallery img {
+.modal-article{
+	display: flex;
+	flex-direction: column;
+}
+
+.image_gallery{
 	width: 100%;
+	height: 90%;
+	position: relative;
+
 
 }
 
-.modal-article svg{
-	z-index: 1;
-	background-color: #000000;
+.image_gallery img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+}
+
+.image_gallery svg {
 	color: #FFFFFF;
+	background-color:#000000;
+	border-radius: 2px;
 	padding: 4px;
+	top: 5px;
+	right: 5px;
+	position: absolute;
+	cursor: pointer;
 }
+
+
 
 .form-photo{
 	display: flex;
@@ -554,6 +581,11 @@ footer nav ul {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	margin-bottom: 46px;
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
 }
 
 .photo__label{
@@ -573,16 +605,13 @@ footer nav ul {
 	background: #E8F1F7;
 	margin-bottom: 20px;
 	position: relative;
-	overflow: hidden;
 }
 
-.newimage{
-	position: absolute;
-	top: 0;
-	left: 0;
+.modal_image{
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	position: absolute;
+	object-fit: contain;
 }
 
 .btnimage{
@@ -610,4 +639,11 @@ footer nav ul {
 	text-align: center;
 	color: #444444;
 	margin-top: 6px;
+}
+
+.notification-error_login{
+	display: flex;
+	justify-content: center;
+	color: #D65353;
+	font-weight: bold;
 }

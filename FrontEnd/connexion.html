@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
     <script src="./assets/connexion.js" defer></script>
+	
 </head>
 <body>
 <header>
@@ -18,7 +19,7 @@
 		<ul>
 			<li> <a href="index.html#nav_projets">projets</a> </li>
 			<li> <a href="index.html#nav_contact">contact</a> </li>
-			<li> <a href="./connexion.html">login</a> </li>
+			<li id="log">login</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -27,15 +28,15 @@
 
     <section id="connexion">
 		<p class="login">Log In</p>
-		<form class="form_connexion" action="#" method="post">
+        <form class="form_connexion" action="#" method="post">
 			<label class="login__label" for="email">E-mail</label>
 			<input class="login__input" type="email" name="email" id="email" value="sophie.bluel@test.tld">
 			<label class="login__label" for="password">Mot de passe</label>
 			<input class="login__input" type="password" name="password" id="password" value="S0phie"></input>
+			<div id="login_notification"></div>
 			<input type="submit" value="Se connecter" id="login__button" >
-            <a class="forgot_password" href="">Mot de passe oublié</a>
-		</form>
-        
+			<a class="forgot_password" href="">Mot de passe oublié</a>
+			</form>
 	</section>
 </main>
 

@@ -12,24 +12,8 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./assets/scripts.js" defer></script>
-	<script src="./assets/modal.js" defer></script>
 </head>
-<div class="modal">
-	<div class="modal-container__add">
-		<button class="btnclose__add"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-				xmlns="http://www.w3.org/2000/svg">
-				<path
-					d="M8.41 7L12.71 2.71C12.8983 2.5217 13.0041 2.2663 13.0041 2C13.0041 1.7337 12.8983 1.47831 12.71 1.29C12.5217 1.1017 12.2663 0.995911 12 0.995911C11.7337 0.995911 11.4783 1.1017 11.29 1.29L7 5.59L2.71 1.29C2.5217 1.1017 2.2663 0.995911 2 0.995911C1.7337 0.995911 1.4783 1.1017 1.29 1.29C1.1017 1.47831 0.995908 1.7337 0.995908 2C0.995908 2.2663 1.1017 2.5217 1.29 2.71L5.59 7L1.29 11.29C1.19627 11.383 1.12188 11.4936 1.07111 11.6154C1.02034 11.7373 0.994202 11.868 0.994202 12C0.994202 12.132 1.02034 12.2627 1.07111 12.3846C1.12188 12.5064 1.19627 12.617 1.29 12.71C1.38296 12.8037 1.49356 12.8781 1.61542 12.9289C1.73728 12.9797 1.86799 13.0058 2 13.0058C2.13201 13.0058 2.26272 12.9797 2.38458 12.9289C2.50644 12.8781 2.61704 12.8037 2.71 12.71L7 8.41L11.29 12.71C11.383 12.8037 11.4936 12.8781 11.6154 12.9289C11.7373 12.9797 11.868 13.0058 12 13.0058C12.132 13.0058 12.2627 12.9797 12.3846 12.9289C12.5064 12.8781 12.617 12.8037 12.71 12.71C12.8037 12.617 12.8781 12.5064 12.9289 12.3846C12.9797 12.2627 13.0058 12.132 13.0058 12C13.0058 11.868 12.9797 11.7373 12.9289 11.6154C12.8781 11.4936 12.8037 11.383 12.71 11.29L8.41 7Z"
-					fill="black" />
-			</svg>
-		</button>
-		<p class="modal-titre">Galerie photo</p>
-		<div id="modal-gallery"></div>
-		<div class="lign"></div>
-		<button class="btnadd">Ajouter une photo</button>
-		<button class="btndeleate">Suprimer la galerie</button>
-	</div>
-</div>
+<div class="modal"></div>
 
 <div class="modal-photo">
 	<div class="modal-container__photo">
@@ -50,7 +34,8 @@
 		</button>
 		<p class="modal-titre">Ajout photo</p>
 		<div class="container-image">
-			<input type="file" id="file" accept="images/*" hidden>
+	
+			<input type="file" id="file" name="file" accept="images/*" hidden >
 			<svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
 					d="M57 6H1C0.448 6 0 6.447 0 7V51C0 51.553 0.448 52 1 52H57C57.552 52 58 51.553 58 51V7C58 6.447 57.552 6 57 6ZM56 50H2V8H56V50Z"
@@ -68,13 +53,10 @@
 		</div>
 		<form class="form-photo" action="#" method="post">
 			<label class="photo__label" for="titre">Titre</label>
-			<input class="photo__input" type="text" name="titre" id="titre">
+			<input class="photo__input" type="text" name="title" id="title_image">
 			<label class="photo__label" for="catégorie">Catégorie</label>
-			<select class="photo__input" type="text" name="catégorie" id="catégorie">
-				<option value=""></option>
-				<option value="Objets">Objets</option>
-				<option value="Appartements">Appartements</option>
-				<option value="Hôtels & restaurants">Hôtels & restaurants</option>
+			<select class="photo__input" type="text" name="category" id="category_image">
+
 			</select>
 		</form>
 		<div class="lign"></div>
@@ -121,7 +103,7 @@
 				<div id="change__projet"></div>
 			</div>
 
-			<div id="category"></div>
+			<div id="categories"></div>
 
 			<div id="gallery"></div>
 
