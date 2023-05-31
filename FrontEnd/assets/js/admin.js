@@ -286,7 +286,6 @@ function displayWorksOnModalProjets (dataGallery) {
 
         // Suppression des travaux sur le site
         articlemodal.querySelector('button').addEventListener('click', async (event) => {
-            //event.preventDefault()
             await deleteWorks(dataGallery[i].id, dataGallery[i].title);
         })
     }
@@ -452,8 +451,6 @@ function displayEditModalNewProjet () {
     modal_addprojet_container.querySelector('.btnvalidation').addEventListener('click', (event) => {
        event.preventDefault()
         checkDataNewProjet()
-        resetFormNewProjet()
-        resetImageNewProjet()
     })
 }
 
@@ -504,7 +501,7 @@ function uploadImage () {
 
             // Reset de l'input et notification de l'erreur sur la taille du fichier
             btnfile.value = "" 
-            //modal_image.remove()
+            modal_image.remove()
             notification_error = document.createElement('p')
             notification_error.classList.add('notification-error')
             notification_error.innerHTML=`La taille du fichier dépasse 4Mo`;
@@ -578,6 +575,9 @@ async function checkDataNewProjet () {
         }
         else{
             viewNewProjet()
+            alert(`Le projet ${title_image} a été rajouté à la galerie`)
+            resetFormNewProjet()
+            resetImageNewProjet()
         }
 }
 
@@ -647,8 +647,10 @@ function displayNewWorkOnHomepage (data) {
         article.classList.add('gallery-article')
         article.setAttribute('id', data.id)
         article.innerHTML = `
+        <div class="image_projet">
             <img src="${data.imageUrl}" alt="${data.title}">
-            <h3>${data.title}</h3>`
+            <h3>${data.title}</h3>
+        </div>`
 
         gallery.appendChild(article)
 }

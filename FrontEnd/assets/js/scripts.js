@@ -81,6 +81,7 @@ function displayCategoriesOnHomepage(dataCategories){
     // Affichage de tous les projets au click du bouton Tous
     button_all.addEventListener('click', async () => {
         displayLoader();
+        //Affiche le loader pour le chargement des travaux
             setTimeout(async () => {
                 const newWorks = await getWorks()
                 displayWorksOnHomepage(newWorks)
@@ -98,6 +99,7 @@ function displayCategoriesOnHomepage(dataCategories){
         // Affichage des projets en fonction de leur catégories d'ID
         button.addEventListener('click', async () =>  {
             displayLoader();
+            //Affiche le loader pour le chargement des travaux
             setTimeout(async () => {
                 const newWorks = await getWorks(dataCategories[j].id)
                 displayWorksOnHomepage(newWorks)
@@ -136,7 +138,9 @@ function displayWorksOnHomepage(dataGallery) {
             article.classList.add('gallery-article')
             article.setAttribute('id', dataGallery[i].id)
             article.innerHTML = `
+                <div class="image_projet">
                 <img src="${dataGallery[i].imageUrl}" alt="${dataGallery[i].title}">
+                </div>
                 <h3>${dataGallery[i].title}</h3>`
 
             gallery.appendChild(article)
@@ -151,6 +155,7 @@ async function init (){
     displayCategoriesOnHomepage(dataCategories)
 
     displayLoader();
+    //Affiche le loader pour le chargement des travaux
     setTimeout(async () => {
         const dataGallery = await getWorks();
         displayWorksOnHomepage(dataGallery)
